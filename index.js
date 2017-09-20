@@ -29,9 +29,42 @@
 	};
 
 
+	let get_images = dom => Array.from(dom.getElementsByTagName("img"));
+	let show_image = img => {
+		_overlay.style.display = "block";
+		_overlay.style.zIndex = 6;
+		_slideshow.style.zIndex = 10;
+
+		img.style.zIndex = 5000;
+		img.style.position = "fixed";
+		img.style.top = "30pt";
+		img.style.left = "20pt";
+		img.style.width = "calc(100% - 40pt)";
+
+		return true;
+	};
+	let hide_image = img => {
+		_overlay.style.display = "none";
+		_overlay.style.zIndex = 10;
+		_slideshow.style.zIndex = 1;
+
+		img.style.position = img.style.top = img.style.left = img.style.width = img.style.zIndex = null;
+
+		return false;
+	};
+	let make_image_toggle = img => {
+		let active = false;
+		img.addEventListener('click', e => {
+			active = active ? hide_image(img) : show_image(img);
+		}, false);
+		_overlay.addEventListener('click', e => hide_image(img), false);
+	};
+
+
 // 	let set_slide_behaviour = button => button.addEventListener
 
 	get_contact_buttons(dom).forEach(set_contact_behaviour);
 	get_form_buttons(_contactform).forEach(set_button_behaviour);
 // 	get_form_buttons(_slideshow).forEach(set_slide_behaviour);
+	get_images(dom).forEach(make_image_toggle);
 })(document);

@@ -309,6 +309,10 @@ ul.Contact {
 	margin:0 0 30pt;
 }
 
+.Products img {
+	border-radius:5pt;
+}
+
 .Products li:nth-child(odd) .Text {
 	float:left;
 	width:calc(33% - 10pt);
@@ -329,8 +333,26 @@ ul.Contact {
 	width:calc(66% - 10pt);
 }
 
-.Products img {
-	border-radius:5pt;
+@media screen and (max-width: 900px) {
+	.Products li:nth-child(odd) .Text {
+		float:left;
+		width:calc(66% - 10pt);
+	}
+
+	.Products li:nth-child(odd) .Image {
+		float:right;
+		width:calc(33% - 10pt);
+	}
+
+	.Products li:nth-child(even) .Text {
+		float:right;
+		width:calc(66% - 10pt);
+	}
+
+	.Products li:nth-child(even) .Image {
+		float:left;
+		width:calc(33% - 10pt);
+	}
 }
 
 .Rule {
