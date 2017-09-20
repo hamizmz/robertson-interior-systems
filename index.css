@@ -38,28 +38,28 @@
     font-family:"Noto Serif";
     font-weight:normal;
     font-style:normal;
-    src:url("fonts/Noto_Sans/NotoSerif-Regular.ttf");
+    src:url("fonts/Noto_Serif/NotoSerif-Regular.ttf");
 }
 
 @font-face {
     font-family:"Noto Serif";
     font-weight:normal;
     font-style:italic;
-    src:url("fonts/Noto_Sans/NotoSerif-Italic.ttf");
+    src:url("fonts/Noto_Serif/NotoSerif-Italic.ttf");
 }
 
 @font-face {
     font-family:"Noto Serif";
     font-weight:bold;
     font-style:normal;
-    src:url("fonts/Noto_Sans/NotoSerif-Bold.ttf");
+    src:url("fonts/Noto_Serif/NotoSerif-Bold.ttf");
 }
 
 @font-face {
     font-family:"Noto Serif";
     font-weight:bold;
     font-style:italic;
-    src:url("fonts/Noto_Sans/NotoSerif-BoldItalic.ttf");
+    src:url("fonts/Noto_Serif/NotoSerif-BoldItalic.ttf");
 }
 
 
@@ -101,6 +101,9 @@ footer, footer h1, footer h2, footer h3 {
 footer section {
 	float:left;
 	width:calc(33% - 30pt);
+}
+
+footer .Copyright {
 	margin-right:30pt;
 }
 
@@ -126,10 +129,8 @@ body > article {
 
 blockquote {
 	position:relative;
-	z-index:5;
-	background-color:rgba(216, 222, 233, 0.62);
-	margin:-20pt 30pt 30pt;
-	padding:20pt 30pt;
+	margin:30pt;
+	padding:20pt 30pt 30pt;
 	border-radius:10pt;
 
 	font-family:"Noto Serif", Serif;
@@ -174,6 +175,14 @@ a img {
 
 img {
 	width:100%;
+}
+
+hr {
+	height:0;
+	overflow:hidden;
+	margin:20pt;
+	border:none;
+	border-top:1px solid #d8dee9;
 }
 
 p {
@@ -333,47 +342,6 @@ ul.Contact {
 	width:calc(66% - 10pt);
 }
 
-@media screen and (max-width: 900px) {
-	.Products li:nth-child(odd) .Text {
-		float:left;
-		width:calc(66% - 10pt);
-	}
-
-	.Products li:nth-child(odd) .Image {
-		float:right;
-		width:calc(33% - 10pt);
-	}
-
-	.Products li:nth-child(even) .Text {
-		float:right;
-		width:calc(66% - 10pt);
-	}
-
-	.Products li:nth-child(even) .Image {
-		float:left;
-		width:calc(33% - 10pt);
-	}
-}
-
-.Rule {
-	position:relative;
-	height:0;
-	margin:1em 20pt;
-	border-top:1px solid #4C566A;
-	font-size:24pt;
-	font-family:"Noto Serif", Serif;
-	font-style:italic;
-	line-height:0;
-	text-align:center;
-}
-
-.Rule span {
-	position:relative;
-	top:-0.125em;
-	padding:5pt 7pt;
-	background-color:#e5e9f0;
-}
-
 #overlay {
 	position:fixed;
 	top:0;
@@ -436,4 +404,87 @@ footer > article::after {
 	display:block;
 	height:0;
 	visibility:hidden;
+}
+
+
+
+@media screen and (max-width: 780px) {
+	header h1 {
+		font-size:26pt;
+	}
+
+	blockquote {
+		margin:20pt 0;
+		padding:0;
+		background-color:transparent;
+	}
+
+	form ul li label {
+		padding-bottom:10pt;
+	}
+
+	form ul li label,
+	form ul li input,
+	form ul li textarea {
+		position:static;
+		display:block;
+		float:none;
+		text-align:left;
+		line-height:1em;
+	}
+
+	footer section {
+		width:calc(50% - 10pt);
+	}
+
+	footer .Copyright {
+		margin-right:20pt;
+	}
+
+	ul.Contact {
+		padding:0;
+	}
+
+	.Slideshow {
+		height:30vh;
+	}
+
+	.Slideshow button {
+		font-size:24pt;
+	}
+
+	.Products li:nth-child(odd) .Text {
+		float:left;
+		width:calc(66% - 10pt);
+	}
+
+	.Products li:nth-child(odd) .Image {
+		float:right;
+		width:calc(33% - 10pt);
+	}
+
+	.Products li:nth-child(even) .Text {
+		float:right;
+		width:calc(66% - 10pt);
+	}
+
+	.Products li:nth-child(even) .Image {
+		float:left;
+		width:calc(33% - 10pt);
+	}
+
+	#contact_form {
+		top:10pt;
+		left:10pt;
+		width:calc(100% - 40pt);
+		padding:10pt;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.Products li .Text,
+	.Products li .Image {
+		float:none !important;
+		width:100% !important;
+	}
 }
